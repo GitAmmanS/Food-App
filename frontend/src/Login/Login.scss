@@ -1,0 +1,146 @@
+$background-image: url('../pics/lexus-subaru-impreza-workshop-wallpaper-preview.jpg');
+$primary-color: #1e1e1e;
+$secondary-color: #2c2c2c;
+$accent-color: #e63946;
+$text-color: #f1faee;
+$input-bg-color: #333333;
+$input-border-color: #555555;
+$label-color: #a8dadc;
+$button-bg-color: #457b9d;
+$button-hover-bg-color: #1d3557;
+$error-color: #e63946;
+$shadow-color: rgba(0, 0, 0, 0.3);
+$font-family: 'Arial, sans-serif';
+
+$breakpoint-small: 500px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+.login-page {
+  background: $background-image no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $text-color;
+  font-family: $font-family;
+
+  .maincontainer {
+    background: $primary-color;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px $shadow-color;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    height: 60%;
+    border: 2px solid $text-color;
+
+    @media (max-width: $breakpoint-medium) {
+      max-width: 300px;
+      height: 70%;
+      padding: 15px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      max-width: 90%;
+      height: auto;
+      padding: 10px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: $text-color;
+
+      @media (max-width: $breakpoint-small) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .innercontainer {
+      .form-group {
+        margin-top: 1rem;
+        position: relative;
+        margin-bottom: 30px;
+
+        input {
+          margin-top: 0.5rem;
+          width: 98%;
+          padding: 10px;
+          background: $input-bg-color;
+          border: 1px solid $input-border-color;
+          border-radius: 6px;
+          outline: none;
+          font-size: 18px;
+          color: $text-color;
+          transition: border-color 0.3s;
+
+          @media (max-width: $breakpoint-small) {
+            padding: 8px;
+            font-size: 16px;
+          }
+        }
+
+        label {
+          position: absolute;
+          top: 19px;
+          left: 15px;
+          font-size: 15px;
+          color: $label-color;
+          transition: all 0.3s;
+
+          @media (max-width: $breakpoint-small) {
+            font-size: 14px;
+          }
+        }
+
+        input:focus + label,
+        input:valid + label {
+          line-height: 30px;
+          transform: translate(-10px, -25px) scale(0.88);
+          z-index: 1;
+        }
+      }
+
+      .btn {
+        background: $button-bg-color;
+        color: $text-color;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+        margin: 0 10px;
+
+        @media (max-width: $breakpoint-small) {
+          padding: 8px 15px;
+          font-size: 14px;
+          margin: 0 5px;
+        }
+
+        &:hover {
+          background: $button-hover-bg-color;
+        }
+
+        &.clear {
+          background: $accent-color;
+
+          // &:hover {
+          //   background: darken($accent-color, 10%);
+          // }
+        }
+      }
+
+      .error {
+        color: $error-color;
+        margin-top: 10px;
+
+        @media (max-width: $breakpoint-small) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

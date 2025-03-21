@@ -1,0 +1,254 @@
+$breakpoint-small: 500px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #2b7365;
+  max-width: 100%;
+
+  img {
+    width: 100px;
+    height: 100px;
+    mix-blend-mode: color-burn;
+    cursor: pointer;
+
+    @media (max-width: $breakpoint-small) {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .input {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    border-radius: 20px;
+    padding: 5px 10px;
+
+    input[type="search"] {
+      border: none;
+      background: none;
+      outline: none;
+      padding: 5px;
+      font-size: 16px;
+      color: #fff;
+
+      @media (max-width: $breakpoint-small) {
+        font-size: 9px;
+        margin-left: 0.3rem;
+      }
+
+      &::placeholder {
+        color: #bbb;
+      }
+    }
+
+    svg {
+      margin-left: 5px;
+      color: #bbb;
+      cursor: pointer;
+    }
+  }
+
+  .nav__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #2b7365;
+
+    .bttn {
+      > button {
+        background-color: #000000;
+        color: white;
+        border: 1px solid white;
+        width: 3rem;
+        height: 1.5rem;
+        margin-left: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #ff0000;
+        }
+      }
+    }
+
+    .nav__item {
+      margin-left: 20px;
+
+      @media (max-width: $breakpoint-small) {
+        margin-left: 1rem;
+      }
+
+      .nav__link {
+        text-decoration: none;
+        color: #000000;
+        background-color: #2b7365;
+        font-size: 18px;
+        transition: color 0.2s ease;
+
+        @media (max-width: $breakpoint-small) {
+          font-size: 14px;
+        }
+
+        &:hover,
+        &.active {
+          color: #ff0000;
+          border-bottom: 2px solid red;
+        }
+      }
+    }
+  }
+}
+
+.grid-container {
+  margin-top: 0.3rem;
+  display: grid;
+  margin: 2rem; /* Adjust margin as needed */
+  grid-template-columns: repeat(10, auto); /* Change the number of columns as per your design */
+  gap: 0.5rem; /* Adjust gap between grid items */
+  padding: 0.2rem;
+  cursor: pointer;
+
+  @media (max-width: $breakpoint-medium) {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  @media (max-width: $breakpoint-small) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .svgs {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+
+    > svg {
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0.5rem; /* Adjust padding for smaller size */
+  font-size: 0.8rem; /* Adjust font size for smaller text */
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  cursor: pointer;
+
+  &:nth-child(odd) {
+    color: #1d3557;
+  }
+
+  &:nth-child(odd):hover {
+    background-color: mediumpurple;
+  }
+
+  &:hover {
+    background-color: rgb(123, 123, 123);
+    transition: 0.5s ease;
+    transform: scale(1.1);
+  }
+}
+
+.footer {
+  bottom: 0;
+  margin-bottom: 0;
+  height: 4rem;
+  background-color: #000000;
+  position: absolute;
+  bottom: -15rem;
+  width: 100%;
+
+  > p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: larger;
+    padding: 1rem;
+    font-weight: bolder;
+  }
+}
+
+h1 {
+  color: #929292;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.head {
+  h2 {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    margin-top: 1rem;
+  }
+}
+
+.addCategory {
+  border: 2px solid rgb(255, 255, 255);
+  height: max-content;
+  width: 40%;
+  margin-left: 24rem;
+  margin-top: 1rem;
+
+  @media (max-width: $breakpoint-medium) {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > form {
+    display: grid;
+    margin: 2rem;
+
+    > label {
+      font-size: 20px;
+      font-weight: 600;
+      color: #343434;
+    }
+
+    > input,
+    > textarea,
+    > select {
+      margin-top: 0.5rem;
+      padding: 2 12px;
+      margin-bottom: 1rem;
+      height: 1.5rem;
+
+      @media (max-width: $breakpoint-small) {
+        height: 1.2rem;
+      }
+    }
+
+    > .bt {
+      width: 3rem;
+      height: 2rem;
+      border: 1px solid white;
+      border-radius: 1rem;
+      font-weight: 500;
+      background-color: #bbb;
+
+      &:hover {
+        background-color: #2b7365;
+      }
+    }
+  }
+}

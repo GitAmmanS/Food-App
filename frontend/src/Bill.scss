@@ -1,0 +1,84 @@
+.bill {
+    font-family: Arial, sans-serif; 
+    width: 100%; 
+    max-width: 58mm; 
+    margin: 0 auto; 
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #000; 
+    
+    h2 {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      text-align: center;
+      font-size: 12px;
+      margin: 2px 0;
+    }
+    
+    .bill-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 10px;
+      
+      th, td {
+        border: 1px solid #000; 
+        padding: 5px;
+        text-align: left;
+      }
+      
+      th {
+        font-weight: bold;
+      }
+      
+      td {
+        text-align: right;
+      }
+    }
+  
+    .bill-table th:nth-child(1), .bill-table td:nth-child(1) {
+      text-align: left;
+    }
+  
+    .bill-table th:nth-child(2), .bill-table td:nth-child(2) {
+      text-align: center;
+    }
+  
+    .bill-table th:nth-child(3), .bill-table td:nth-child(3) {
+      text-align: right;
+    }
+  
+    .bill-table th:nth-child(4), .bill-table td:nth-child(4) {
+      text-align: right;
+    }
+  
+    @media print {
+      body {
+        margin: 0;
+      }
+  
+      .bill {
+        width: 100%;
+        max-width: 58mm;
+        padding: 0;
+        border: none;
+      }
+  
+      .bill-table {
+        border: none;
+      }
+      th{
+        color: #000;
+      }
+      .bill-table th, .bill-table td {
+        // border: none;
+        padding: 5px;
+        text-align: left;
+      }
+    }
+  }
+  
